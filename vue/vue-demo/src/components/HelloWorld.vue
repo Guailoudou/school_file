@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed  } from 'vue'
 
 // defineProps({
 //   msg: String,
@@ -26,9 +26,45 @@ const type = ref('B')
 
 const flag = ref(true)
 
+const change = event => console.log(event)
+const count = ref(1)
+const addCount = event => {
+  count.value++
+  if (count.value % 2 === 0) 
+  { 
+    event.target.style.border = '3px dotted' 
+  } 
+  else 
+  { event.target.style.border = '3px solid' }
+}
+// let show = message =>  console.log(message)
+const message = ref('Hello World')
+const reversedMessage = computed(() =>
+  message.value.split('').reverse().join('')
+)
+const updateMessage = () => {
+  message.value = 'hello'
+}
+
 </script>
 
 <template>
+  <p>初始message：{{ message }}</p>
+  <p>反转之后的message：{{ reversedMessage }}</p>
+  <button @click="updateMessage">更改</button>
+ <hr>
+  <button v-on:click.right="show('捕获到鼠标左键')">按钮</button>
+<hr>
+  <input type="text" v-on:keyup.right.exact="submit('yyyyy')">
+
+    <div v-on:click.capture.once="show('我是父元素的事件')">
+      <button v-on:click="show('我是子元素的事件')">事件捕获</button>
+    </div>
+
+
+  <div>count的值为：{{ count }}</div>
+  <button @click="addCount">count+1</button>
+
   <h2>{{ msg }}</h2>
   <div v-text="msg"></div>
   <div v-html="hmsg"></div>
@@ -53,6 +89,7 @@ const flag = ref(true)
   <p v-if="flag">通过v-if控制的元素</p>
   <p v-show="flag">通过v-show控制的元素</p>
   <button @click="flag = !flag">显示/隐藏</button>
+  <button @click="change($event)">change</button>
 
 </template>
 
