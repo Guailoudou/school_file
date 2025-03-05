@@ -1,9 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import xxjhb from './components/xxjhb.vue'
+
+
 </script>
 
 <template>
-  <HelloWorld/>
+  <!-- <HelloWorld/> -->
+  <xxjhb/>
 </template>
 
 <style scoped>
