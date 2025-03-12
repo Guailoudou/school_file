@@ -1,13 +1,14 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import xxjhb from './components/xxjhb.vue'
-
+import CAPI from './components/CAPI.vue'
 
 </script>
 
 <template>
   <!-- <HelloWorld/> -->
-  <xxjhb/>
+  <!-- <xxjhb/> -->
+    <CAPI/>
 </template>
 
 <style scoped>
