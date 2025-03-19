@@ -1,17 +1,10 @@
-#include<reg51.h>
-#include<absacc.h>
-//202210137227 nihaodong
+#include<reg51.h> //引入51单片机定义的头文件
+#include<absacc.h> //引入绝对地址访问的头文件
+#define uchar unsigned char 
 void main(){
-	DBYTE[0x20] = 0x20;
-	DBYTE[0x21] = 0x22;
-	DBYTE[0x22] = 0x10;
-	DBYTE[0x23] = 0x13;
-	DBYTE[0x24] = 0x72;
-	DBYTE[0x25] = 0x27;
-	XBYTE[0xFFFC] = 0x22;
-	XBYTE[0xFFFD] = 0x10;
-	XBYTE[0xFFFE] = 0x13;
-	XBYTE[0xFFFF] = 0x72;
-	XBYTE[0xFFF0] = 0x27;
-	
+	uchar i;
+	for(i=0;i<=15;i++){
+		XBYTE[0x2000+i]=i;
+	}
 }
+//202210137227 倪浩东

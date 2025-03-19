@@ -1,6 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
-import xxjhb from './components/xxjhb.vue'
+import xxjhb from './components/sy1/xxjhb.vue'
+import todolist from './components/sy2/todolist.vue'
 import CAPI from './components/CAPI.vue'
 
 </script>
@@ -8,7 +9,7 @@ import CAPI from './components/CAPI.vue'
 <template>
   <!-- <HelloWorld/> -->
   <!-- <xxjhb/> -->
-    <CAPI/>
+    <todolist/>
 </template>
 
 <style scoped>
