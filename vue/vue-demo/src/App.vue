@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import xxjhb from './components/sy1/xxjhb.vue'
 import todolist from './components/sy2/todolist.vue'
+import spgl from './components/sy3/spgl.vue'
 import CAPI from './components/CAPI.vue'
 
 </script>
@@ -9,7 +10,8 @@ import CAPI from './components/CAPI.vue'
 <template>
   <!-- <HelloWorld/> -->
   <!-- <xxjhb/> -->
-    <todolist/>
+    <!-- <todolist/> -->
+     <spgl/>
 </template>
 
 <style scoped>
