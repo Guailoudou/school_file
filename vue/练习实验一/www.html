@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>简单计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .calculator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 250px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            /* 给不同运算符不同颜色 */
+            background-color:
+                #ff9500 (加法) ,
+                #4CAF50 (减法) ,
+                #2196F3 (乘法) ,
+                #f44336 (除法);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>简单计算器</h2>
+        
+        <div class="input-group">
+            <input type="number" id="numberInput" placeholder="输入数字">
+        </div>
+
+        <div class="buttons">
+            
+                <button onclick="calculate(2, 'plus')">+</button>
+                <button onclick="calculate(2, 'minus')">-</button>
+                <button onclick="calculate(2, 'multiply')">×</button>
+                <button onclick="calculate(2, 'divide')">÷</button>
+
+                <!-- 数字按钮 -->
+                <button onclick="addNumber('7')">7</button>
+                <button onclick="addNumber('8')">8</button>
+                <button onclick="addNumber('9')">9</button>
+                <button onclick="addNumber('4')">4</button>
+                <button onclick="addNumber('5')">5</button>
+                <button onclick="addNumber('6')">6</button>
+                <button onclick="addNumber('1')">1</button>
+                <button onclick="addNumber('2')">2</button>
+                <button onclick="addNumber('3')">3</button>
+
+                <!-- 运算符 -->
+                <!-- 按下等于号 -->
+                
+                <input type="text" id="operatorInput" value="+", 
+                    ></input>
+
+                
+            
+                
+            
+                
+            
+        
+    </div>
+
+<script>
+    <!-- 计算函数 -->
+    function calculate(num, operation) {
+        
+       // 这里可以增加更复杂的计算逻辑
+       // 暂时只支持单个运算符
+       let result = eval(num + operation);
+       document.getElementById('result').innerHTML = result;
+
+       // 清空输入
+       document.getElementById("numberInput").value = '';
+       document.getElementById("operatorInput").value = '';
+   }
+
+   // 初始化
+   function initialize() {
+      // 添加默认运算符
+      document.getElementById("operatorInput").value = '+';
+   }
+   
+   // 显示结果
+   document.getElementById("result").innerHTML = "等待计算...";
+
+   // 添加事件监听器
+   window.onclick = function(event) {
+      if (event.target == document.getElementById("numberInput")) {
+          event.target.value += event.target.value.charAt(event.target.length -1);
+      }
+   }
+</script>
+</body>
+</html>
